@@ -1,0 +1,22 @@
+{
+  "name": "solxen-burn-tracker",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@solana/web3.js": "^1.95.4",
+    "csv-parser": "^3.0.0",
+    "fs-extra": "^11.2.0",
+    "node-cron": "^3.0.3",
+    "puppeteer": "^23.6.1",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
+    "sqlite3": "^5.1.7"
+  }
+}

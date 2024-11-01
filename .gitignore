@@ -1,0 +1,6 @@
+
+/node_modules
+/downloads
+*.png
+package-lock.json
+solxen-burns.db
