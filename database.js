@@ -11,11 +11,11 @@ class Database {
             this.db.run(`
                 CREATE TABLE IF NOT EXISTS burns (
                     signature TEXT PRIMARY KEY,
-                    block_timestamp DATETIME,
-                    slot INTEGER,
-                    signer TEXT,
+                    burner TEXT,
                     amount DECIMAL(20,9),
                     memo TEXT,
+                    token TEXT,
+                    timestamp DATETIME,
                     memo_checked CHAR(1),
                     created_at DATETIME DEFAULT CURRENT_TIMESTAMP
                 )
@@ -30,16 +30,16 @@ class Database {
         return new Promise((resolve, reject) => {
             const sql = `
                 INSERT OR IGNORE INTO burns (
-                    signature, block_timestamp, slot, signer, amount, memo_checked
+                    signature, burner, amount, token, timestamp, memo_checked
                 )
                 VALUES (?, ?, ?, ?, ?, NULL)
             `;
             this.db.run(sql, [
                 burn.signature,
-                burn.block_timestamp,
-                burn.slot,
-                burn.signer,
-                burn.amount
+                burn.burner,
+                burn.amount,
+                burn.token,
+                burn.timestamp
             ], (err) => {
                 if (err) reject(err);
                 else resolve();

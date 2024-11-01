@@ -63,10 +63,12 @@ class CsvProcessor {
                 .on('data', (row) => {
                     records.push({
                         signature: row.Signature,
-                        block_timestamp: row['Block Timestamp'],
-                        slot: row.Slot,
-                        signer: row.Signer,
-                        amount: parseFloat(row.Amount)
+                        burner: row.From,
+                        amount: parseFloat(row.Amount),
+                        token: row.TokenAddress,
+                        timestamp: row.Time,
+                        memo: null,  // Initialize as null
+                        memo_checked: null  // Initialize as null
                     });
                 })
                 .on('end', async () => {
