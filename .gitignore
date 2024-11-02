@@ -4,3 +4,4 @@
 *.png
 package-lock.json
 solxen-burns.db
+/user_data
