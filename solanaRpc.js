@@ -15,7 +15,7 @@ class SolanaRPC {
 
             // Look for memo instruction
             for (const instruction of tx.transaction.message.instructions) {
-                if (instruction.program === 'Memo1') {
+                if (instruction.program === 'spl-memo') {
                     return instruction.parsed;
                 }
             }
